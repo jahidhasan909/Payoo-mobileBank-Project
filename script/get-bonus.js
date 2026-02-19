@@ -12,4 +12,15 @@ document.getElementById('coupon-btn').addEventListener('click', function () {
     } else {
         alert('Invalid coupon');
     }
+
+    const container = document.getElementById('container');
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <i class="fa-solid fa-folder-plus" style="color: rgb(226, 180, 10);"></i>
+    <article>
+    <h3>Add bonus : ${bonusAmount}Tk</h3>
+    <p>${new Date}</p>
+    </article>
+    `
+    container.appendChild(div);
 })

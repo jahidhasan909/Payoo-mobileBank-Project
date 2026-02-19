@@ -29,4 +29,19 @@ document.getElementById('addmoney-btn').addEventListener('click', function () {
         alert('wrong pin number');
     }
 
+
+
+    const container = document.getElementById('container');
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <i class="fa-solid fa-folder-plus" style="color: rgb(226, 180, 10);"></i>
+    <article>
+    <h3>${bankSelect} :${addMoney}Tk</h3>
+    <p>Money Add :: ${new Date}</p>
+    </article>
+    `
+    container.appendChild(div);
+
+
+
 })

@@ -22,6 +22,27 @@
         * {
             font-family: "Outfit", sans-serif;
         }
+
+
+        #container>div {
+            background-color: rgba(233, 232, 232, 0.611);
+            border-radius: 8px;
+            padding: 7px 9px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        #container>div>article>h3 {
+            font-size: 1rem;
+            font-style: bold;
+            font-weight: 900;
+        }
+
+        #container>div>article>p {
+            font-size: 0.70rem;
+            color: rgb(115, 114, 114);
+        }
     </style>
 
 
@@ -60,6 +81,7 @@
                 charge is low and</p>
         </section>
 
+        <!-- button section -->
         <section class="btns w-[390px] mx-auto grid grid-cols-3 gap-4">
             <button onclick="showOnly('addmoney')" class="btn flex-col py-10 btn-soft btn-primary">
                 <img src="./assets/opt-1.png" alt="">
@@ -77,18 +99,19 @@
                 <img src="./assets/opt-4.png" alt="">
                 Get Bonus
             </button>
-            <button class="btn flex-col py-10 btn-soft btn-primary">
+            <button onclick="showOnly('pay-bill')" class="btn flex-col py-10 btn-soft btn-primary">
                 <img src="./assets/opt-5.png" alt="">
                 pay Bill
             </button>
-            <button class="btn flex-col py-10 btn-soft btn-primary">
+            <button onclick="showOnly('container')" class="btn flex-col py-10 btn-soft btn-primary">
                 <img src="./assets/opt-6.png" alt="">
                 Transaction
             </button>
         </section>
 
+        <!-- input section -->
         <section>
-            <div id="cashout" class="pt-8 mx-auto w-[390px] hidden">
+            <div id="cashout" class="pt-6 pb-5 mx-auto w-[390px] hidden">
                 <h1 class="text-neutral font-bold mb-3">CashOut</h1>
                 <div class="card bg-base-100 w-full max-w-full shadow rounded-3xl">
                     <div class="card-body">
@@ -111,11 +134,10 @@
                     </div>
                 </div>
             </div>
-            <br>
         </section>
 
         <section>
-            <div id="addmoney" class="pt-8 mx-auto w-[390px] hidden">
+            <div id="addmoney" class="pt-6 pb-5 mx-auto w-[390px] hidden">
                 <h1 class="text-neutral font-bold mb-3">Add Money</h1>
                 <div class="card bg-base-100 w-full max-w-full shadow rounded-3xl">
                     <div class="card-body">
@@ -148,11 +170,10 @@
                     </div>
                 </div>
             </div>
-            <br>
         </section>
 
         <section>
-            <div id="money-transfer" class="pt-8 mx-auto w-[390px] hidden">
+            <div id="money-transfer" class="pt-6 pb-5 mx-auto w-[390px] hidden">
                 <h1 class="text-neutral font-bold mb-3">Transfer Money</h1>
                 <div class="card bg-base-100 w-full max-w-full shadow rounded-3xl">
                     <div class="card-body">
@@ -175,12 +196,10 @@
                     </div>
                 </div>
             </div>
-            <br>
         </section>
 
-
         <section>
-            <div id="get-bonus" class="mx-auto w-[390px] hidden">
+            <div id="get-bonus" class="pt-6 pb-5 mx-auto w-[390px] hidden">
                 <h1 class="text-neutral font-bold mb-3">Get Bonus</h1>
                 <div class="card bg-base-100 w-full max-w-full shadow rounded-3xl">
                     <div class="card-body">
@@ -194,10 +213,45 @@
                     </div>
                 </div>
             </div>
-            <br>
         </section>
 
+        <section>
+            <div id="pay-bill" class="pt-6 pb-5 mx-auto w-[390px] hidden">
+                <h1 class="text-neutral font-bold mb-3">Pay Bill</h1>
+                <div class="card bg-base-100 w-full max-w-full shadow rounded-3xl">
+                    <div class="card-body">
+                        <fieldset class="fieldset">
 
+                            <label class="label font-bold text-neutral">Select to pay</label>
+                            <select id="add-bill" class="select bg-base-300 w-full rounded-full">
+                                <option disabled selected>Select Bill</option>
+                                <option value="Electric bill">Electric bill</option>
+                                <option value="Internat Bill">Internat Bill</option>
+                                <option value="Gas Bill">Gas Bill</option>
+                            </select>
+
+
+                            <label class="label font-bold text-neutral">Biller Acount Number</label>
+                            <input id="pay-bill-accNumber" maxlength="11" minlength="11" type="text"
+                                class="input rounded-full bg-base-300 w-full" placeholder="Enter Account number" />
+
+                            <label class="label font-bold text-neutral">Amount to pay</label>
+                            <input id="payBill-amount" type="number" class="input rounded-full bg-base-300 w-full"
+                                placeholder="Add Amount to pay" />
+
+                            <label class="label font-bold text-neutral">Pin Number</label>
+                            <input id="payBill-pin" maxlength="4" type="password"
+                                class="input rounded-full bg-base-300 w-full" placeholder="Enter 4 digit pin number" />
+                            <button id="payBill-btn" class="btn btn-neutral mt-4 rounded-full bg-primary">Pay
+                                Now</button>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="container" class="p-5 space-y-3 hidden">
+        </section>
 
     </main>
 
@@ -206,7 +260,7 @@
     <script src="script/cashout.js"></script>
     <script src="script/money-transfer.js"></script>
     <script src="script/get-bonus.js"></script>
-
+    <script src="script/paybill.js"></script>
 </body>
 
 </html>
